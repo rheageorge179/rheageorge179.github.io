@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rhea George | Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-white">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Rhea George</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -32,56 +31,34 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section d-flex align-items-center" id="home">
+  <section class="hero d-flex align-items-center" id="home">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6" data-aos="fade-right">
-          <h1 class="display-4 fw-bold">Hi, I'm Rhea George</h1>
-          <p class="lead mb-4">MIS Grad @ TAMU | Data & Product Enthusiast</p>
-          <p class="skills mb-4">SQL • Power BI • Python • Data Analytics</p>
-          <div class="hero-btns">
-            <a href="#projects" class="btn btn-primary me-3">View My Work</a>
-            <a href="assets/Rhea_George_Resume.pdf" class="btn btn-outline-secondary" download>Download Resume</a>
-          </div>
+        <div class="col-md-6" data-aos="fade-right">
+          <h1 class="display-4 fw-bold mb-4">Hi, I'm Rhea George</h1>
+          <p class="lead mb-4">MIS Grad @ TAMU | Data & Product Enthusiast | SQL • Power BI • Python</p>
+          <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
         </div>
-        <div class="col-lg-6 text-center" data-aos="fade-left">
-          <div class="profile-container">
-            <img src="assets/images/profile.png" alt="Rhea George" class="profile-img">
-          </div>
+        <div class="col-md-6 text-center" data-aos="fade-left">
+          <img src="assets/images/profile.png" alt="Rhea George" class="hero-image img-fluid rounded-circle">
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="section-padding bg-teal text-white" id="about">
+  <section class="section-padding bg-light" id="about">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-lg-8 mx-auto text-center" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
+          <img src="assets/images/about.jpg" alt="About Me" class="img-fluid rounded">
+        </div>
+        <div class="col-md-7" data-aos="fade-left">
           <h2 class="section-title">About Me</h2>
-          <div class="divider mx-auto"></div>
-          <p class="section-text">
-            I'm pursuing my Master's in Management Information Systems at Texas A&M. With experience at Accenture and TAMU, 
-            I've led initiatives in analytics, cloud systems, and BI tools to drive data-informed decision making. 
-            I'm passionate about leveraging data to solve complex business problems and create meaningful insights.
-          </p>
-          <div class="expertise-container">
-            <div class="expertise-item">
-              <i class="fas fa-database"></i>
-              <h5>Data Analysis</h5>
-            </div>
-            <div class="expertise-item">
-              <i class="fas fa-chart-line"></i>
-              <h5>BI & Visualization</h5>
-            </div>
-            <div class="expertise-item">
-              <i class="fas fa-cloud"></i>
-              <h5>Cloud Infrastructure</h5>
-            </div>
-            <div class="expertise-item">
-              <i class="fas fa-code"></i>
-              <h5>Python & SQL</h5>
-            </div>
+          <p class="mb-4">I'm pursuing my Master's in Management Information Systems at Texas A&M. With experience at Accenture and TAMU, I've led initiatives in analytics, cloud systems, and BI tools to drive data-informed decision making.</p>
+          <div class="d-flex gap-3">
+            <a href="assets/Rhea_George_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
           </div>
         </div>
       </div>
@@ -91,16 +68,9 @@
   <!-- Projects Section -->
   <section class="section-padding" id="projects">
     <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">Projects</h2>
-      <div class="divider mx-auto" data-aos="fade-up"></div>
-      <div class="project-filter mb-4" data-aos="fade-up">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="data-analytics">Data Analytics</button>
-        <button class="filter-btn" data-filter="cloud">Cloud</button>
-        <button class="filter-btn" data-filter="visualization">Visualization</button>
-      </div>
-      <div class="row g-4 projects-container">
-        <!-- Projects will be dynamically populated here through projects.js -->
+      <h2 class="section-title text-center mb-5">My Projects</h2>
+      <div class="row" id="projects-container">
+        <!-- Projects will be dynamically inserted here from projects.js -->
       </div>
     </div>
   </section>
@@ -108,23 +78,24 @@
   <!-- Education Section -->
   <section class="section-padding bg-light" id="education">
     <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">Education</h2>
-      <div class="divider mx-auto" data-aos="fade-up"></div>
-      <div class="row">
-        <div class="col-md-6" data-aos="fade-right">
-          <div class="education-card">
-            <div class="education-year">2024 - 2026</div>
-            <h4>Master of Science in Management Information Systems</h4>
-            <h5>Texas A&M University</h5>
-            <p>Focusing on data analytics, business intelligence, and information systems.</p>
-          </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-left">
-          <div class="education-card">
-            <div class="education-year">2017 - 2021</div>
-            <h4>BTech in Electronics & Communication Engineering</h4>
-            <h5>Karunya Institute of Technology</h5>
-            <p>Developed a strong foundation in engineering principles and technical problem-solving.</p>
+      <h2 class="section-title text-center mb-5">Education</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="timeline">
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-content">
+                <h3>Texas A&M University</h3>
+                <p class="timeline-date">2024 - 2026</p>
+                <p>Master of Science in Management Information Systems</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline-content">
+                <h3>Karunya Institute of Technology</h3>
+                <p class="timeline-date">2017 - 2021</p>
+                <p>Bachelor of Technology in Electronics & Communication Engineering</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -134,30 +105,25 @@
   <!-- Certifications Section -->
   <section class="section-padding" id="certifications">
     <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">Certifications</h2>
-      <div class="divider mx-auto" data-aos="fade-up"></div>
-      <div class="row g-4">
-        <div class="col-md-6" data-aos="fade-up">
-          <div class="cert-card">
-            <div class="cert-icon">
+      <h2 class="section-title text-center mb-5">Certifications</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="certification-item" data-aos="fade-up">
+            <div class="certification-logo">
               <i class="fab fa-microsoft"></i>
             </div>
-            <div class="cert-content">
-              <h4>Microsoft Certified: Azure Data Engineer Associate</h4>
+            <div class="certification-content">
+              <h3><a href="https://learn.microsoft.com/en-us/users/georgerhea-2535/credentials/certification/azure-data-engineer?source=docs&tab=credentials-tab" target="_blank">Microsoft Certified: Azure Data Engineer Associate</a></h3>
               <p>Earned June 2023</p>
-              <a href="https://learn.microsoft.com/en-us/users/georgerhea-2535/credentials/certification/azure-data-engineer?source=docs&tab=credentials-tab" target="_blank" class="cert-link">View Credential</a>
             </div>
           </div>
-        </div>
-        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-          <div class="cert-card">
-            <div class="cert-icon">
+          <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="certification-logo">
               <i class="fas fa-certificate"></i>
             </div>
-            <div class="cert-content">
-              <h4>Professional Scrum Master I (PSM I)</h4>
+            <div class="certification-content">
+              <h3><a href="https://www.scrum.org/certificates/1138947" target="_blank">Professional Scrum Master I (PSM I)</a></h3>
               <p>Earned September 2024</p>
-              <a href="https://www.scrum.org/certificates/1138947" target="_blank" class="cert-link">View Credential</a>
             </div>
           </div>
         </div>
@@ -168,33 +134,22 @@
   <!-- Contact Section -->
   <section class="section-padding bg-light" id="contact">
     <div class="container">
-      <h2 class="section-title text-center" data-aos="fade-up">Let's Connect</h2>
-      <div class="divider mx-auto" data-aos="fade-up"></div>
-      <div class="row">
-        <div class="col-md-6 mx-auto text-center" data-aos="fade-up">
-          <p class="section-text mb-4">Feel free to reach out to me for collaborations, opportunities, or just a chat about data and technology!</p>
-          <div class="contact-info mb-4">
-            <div class="contact-item">
+      <h2 class="section-title text-center mb-5">Get In Touch</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <p class="mb-4">Feel free to reach out for collaboration opportunities or just to say hello!</p>
+          <div class="contact-links">
+            <a href="mailto:rheageorge179@gmail.com" class="contact-link" data-aos="zoom-in">
               <i class="fas fa-envelope"></i>
-              <a href="/cdn-cgi/l/email-protection#54263c313533313b26333165636d143339353d387a373b39"><span class="__cf_email__" data-cfemail="89fbe1ece8eeece6fbeeecb8beb0c9eee4e8e0e5a7eae6e4">[email&#160;protected]</span></a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>College Station, TX</span>
-            </div>
-          </div>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/rheageorge99/" target="_blank" class="social-icon">
-              <i class="fab fa-linkedin-in"></i>
+              <span>rheageorge179@gmail.com</span>
             </a>
-            <a href="https://github.com/rheageorge179" target="_blank" class="social-icon">
+            <a href="https://www.linkedin.com/in/rheageorge99/" target="_blank" class="contact-link" data-aos="zoom-in" data-aos-delay="100">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/rheageorge179" target="_blank" class="contact-link" data-aos="zoom-in" data-aos-delay="200">
               <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:rhea179@tamu.edu" class="social-icon">
-              <i class="fas fa-envelope"></i>
-            </a>
-            <a href="assets/Rhea_George_Resume.pdf" download class="social-icon">
-              <i class="fas fa-file-download"></i>
+              <span>GitHub</span>
             </a>
           </div>
         </div>
@@ -205,13 +160,41 @@
   <!-- Footer -->
   <footer class="py-4 text-center">
     <div class="container">
-      <p class="mb-0">&copy; 2025 Rhea George. All rights reserved.</p>
+      <p class="mb-0">&copy; 2025 Rhea George. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="projects.js"></script>
-  <script src="script.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Active link switching
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').substring(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
