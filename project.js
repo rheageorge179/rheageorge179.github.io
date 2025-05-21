@@ -1,187 +1,95 @@
-/**
- * Projects data and management for portfolio site
- * This file allows easy addition of new projects without modifying HTML structure
- */
-
-// Array of projects with their details
-const projects = [
+// Project data array - Add your projects here!
+const projectsData = [
   {
     id: 1,
-    title: "Churn Prediction",
-    description: "Used Decision Trees & Logistic Regression to predict churn with 85% accuracy.",
-    image: "assets/images/project-churn.jpg", // Default image, can be updated
-    category: "data-analytics",
-    tags: ["Machine Learning", "Python", "Classification"],
-    githubLink: "https://github.com/rheageorge179/Customer-Churn-Prediction-using-ML",
-    demoLink: ""
+    title: "Customer Churn Prediction",
+    category: "Machine Learning",
+    description: "Used Decision Trees & Logistic Regression to predict customer churn with 85% accuracy.",
+    image: "assets/images/project1.jpg",
+    links: [
+      { 
+        name: "GitHub", 
+        url: "https://github.com/rheageorge179/Customer-Churn-Prediction-using-ML", 
+        icon: "fab fa-github"
+      }
+    ]
   },
   {
     id: 2,
     title: "Healthcare Infrastructure",
-    description: "Deployed a cloud-hosted DB (AWS EC2) that improved data retrieval speed by 40%.",
-    image: "assets/images/project-healthcare.jpg", // Default image, can be updated
-    category: "cloud",
-    tags: ["AWS", "EC2", "Database", "Healthcare"],
-    githubLink: "",
-    demoLink: ""
+    category: "Cloud Computing",
+    description: "Deployed a cloud-hosted database (AWS EC2) that improved data retrieval speed by 40%.",
+    image: "assets/images/project2.jpg",
+    links: [
+      { 
+        name: "Details", 
+        url: "#", 
+        icon: "fas fa-link"
+      }
+    ]
   },
   {
     id: 3,
     title: "Dashboard Automation",
-    description: "Built Tableau and Power BI dashboards to enhance reporting at TAMU & Accenture.",
-    image: "assets/images/project-dashboard.jpg", // Default image, can be updated
-    category: "visualization",
-    tags: ["Tableau", "Power BI", "Data Visualization"],
-    githubLink: "",
-    demoLink: ""
-  }
+    category: "Data Visualization",
+    description: "Built Tableau and Power BI dashboards to enhance reporting capabilities at TAMU & Accenture.",
+    image: "assets/images/project3.jpg",
+    links: [
+      { 
+        name: "Details", 
+        url: "#", 
+        icon: "fas fa-link"
+      }
+    ]
+  },
+  // Add more projects here as needed!
 ];
 
-/**
- * Creates HTML for a project card
- * @param {Object} project - Project data
- * @return {string} HTML string for the project card
- */
-function createProjectCard(project) {
-  // Create tags HTML
-  const tagsHtml = project.tags.map(tag => 
-    `<span class="project-tag">${tag}</span>`
-  ).join('');
+// Function to render project cards
+function renderProjects() {
+  const projectsContainer = document.getElementById('projects-container');
   
-  // Create links HTML (only add links that exist)
-  let linksHtml = '';
-  if (project.githubLink) {
-    linksHtml += `<a href="${project.githubLink}" class="project-link" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>`;
-  }
-  if (project.demoLink) {
-    linksHtml += `<a href="${project.demoLink}" class="project-link" target="_blank">View Demo <i class="fas fa-external-link-alt"></i></a>`;
-  }
-
-  // Default image fallback if image not provided
-  const imagePath = project.image || "assets/images/project-placeholder.jpg";
-  
-  return `
-    <div class="col-md-4 col-sm-6 project-item ${project.category}">
-      <div class="project-card">
-        <div class="project-img-container">
-          <img src="${imagePath}" alt="${project.title}" class="project-img">
-          <div class="project-overlay"></div>
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            ${tagsHtml}
-          </div>
-          <h4>${project.title}</h4>
-          <p>${project.description}</p>
-          <div class="project-links">
-            ${linksHtml}
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-/**
- * Loads all projects into the projects container
- */
-function loadProjects() {
-  const projectsContainer = document.querySelector('.projects-container');
-  if (!projectsContainer) return;
-  
-  // Create HTML for all projects and add to container
-  const projectsHtml = projects.map(project => createProjectCard(project)).join('');
-  projectsContainer.innerHTML = projectsHtml;
-}
-
-/**
- * Add a new project to the portfolio
- * This can be called from the browser console to dynamically add a project
- * 
- * @param {Object} projectData - Project data object
- * @param {string} projectData.title - Project title
- * @param {string} projectData.description - Project description
- * @param {string} projectData.image - Path to project image (optional)
- * @param {string} projectData.category - Project category (data-analytics, cloud, visualization)
- * @param {Array<string>} projectData.tags - Array of project tags
- * @param {string} projectData.githubLink - GitHub repository link (optional)
- * @param {string} projectData.demoLink - Demo link (optional)
- */
-function addProject(projectData) {
-  // Validate required fields
-  if (!projectData.title || !projectData.description || !projectData.category) {
-    console.error('Project must include title, description, and category');
+  if (!projectsContainer) {
+    console.error('Projects container not found');
     return;
   }
   
-  // Generate a new ID
-  const newId = projects.length > 0 ? Math.max(...projects.map(p => p.id)) + 1 : 1;
+  projectsContainer.innerHTML = '';
   
-  // Add the new project with ID
-  const newProject = {
-    id: newId,
-    tags: [],  // Default empty array if not provided
-    ...projectData
-  };
-  
-  // Add to projects array
-  projects.push(newProject);
-  
-  // Reload projects to display the new one
-  loadProjects();
-  
-  console.log(`Project "${newProject.title}" added successfully!`);
-  return newProject.id;
-}
-
-/**
- * Remove a project by ID
- * @param {number} id - Project ID to remove
- */
-function removeProject(id) {
-  const initialLength = projects.length;
-  const index = projects.findIndex(project => project.id === id);
-  
-  if (index !== -1) {
-    projects.splice(index, 1);
-    loadProjects();
-    console.log(`Project with ID ${id} removed successfully!`);
-  } else {
-    console.error(`No project found with ID ${id}`);
-  }
-  
-  return projects.length < initialLength;
-}
-
-/**
- * Update an existing project
- * @param {number} id - Project ID to update
- * @param {Object} updatedData - New data to update project with
- */
-function updateProject(id, updatedData) {
-  const index = projects.findIndex(project => project.id === id);
-  
-  if (index !== -1) {
-    // Update the project but maintain the same ID
-    projects[index] = {
-      ...projects[index],
-      ...updatedData,
-      id: projects[index].id
-    };
+  projectsData.forEach(project => {
+    const projectCard = document.createElement('div');
+    projectCard.className = 'col-lg-4 col-md-6';
+    projectCard.setAttribute('data-aos', 'fade-up');
     
-    loadProjects();
-    console.log(`Project with ID ${id} updated successfully!`);
-    return true;
-  } else {
-    console.error(`No project found with ID ${id}`);
-    return false;
-  }
+    let linksHTML = '';
+    if (project.links && project.links.length > 0) {
+      linksHTML = '<div class="project-links">';
+      project.links.forEach(link => {
+        linksHTML += `
+          <a href="${link.url}" class="btn btn-sm btn-primary" target="_blank">
+            <i class="<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>l</mi><mi>i</mi><mi>n</mi><mi>k</mi><mi mathvariant="normal">.</mi><mi>i</mi><mi>c</mi><mi>o</mi><mi>n</mi></mrow><mi>m</mi><mi>e</mi><mo>−</mo><mn>1</mn><mi mathvariant="normal">&quot;</mi><mo>&gt;</mo><mo>&lt;</mo><mi mathvariant="normal">/</mi><mi>i</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">{link.icon} me-1&quot;&gt;&lt;/i&gt; </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.03148em;">ink</span><span class="mord">.</span><span class="mord mathnormal">i</span><span class="mord mathnormal">co</span><span class="mord mathnormal">n</span></span><span class="mord mathnormal">m</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">1&quot;</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal">i</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span></span></span></span>{link.name}
+          </a>
+        `;
+      });
+      linksHTML += '</div>';
+    }
+    
+    projectCard.innerHTML = `
+      <div class="project-card">
+        <img src="<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>g</mi><mi>e</mi></mrow><mi mathvariant="normal">&quot;</mi><mi>a</mi><mi>l</mi><mi>t</mi><mo>=</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">{project.image}&quot; alt=&quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">ro</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">ima</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">e</span></span><span class="mord">&quot;</span><span class="mord mathnormal">a</span><span class="mord mathnormal">lt</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord">&quot;</span></span></span></span>{project.title}" class="project-image">
+        <div class="project-content">
+          <div class="project-category">${project.category}</div>
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-description"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>p</mi><mi>r</mi><mi>o</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi mathvariant="normal">.</mi><mi>d</mi><mi>e</mi><mi>s</mi><mi>c</mi><mi>r</mi><mi>i</mi><mi>p</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow><mo>&lt;</mo><mi mathvariant="normal">/</mi><mi>p</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">{project.description}&lt;/p&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="mord mathnormal">ro</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">ec</span><span class="mord mathnormal">t</span><span class="mord">.</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.02778em;">escr</span><span class="mord mathnormal">i</span><span class="mord mathnormal">pt</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal">n</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">/</span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span></span></span></span>{linksHTML}
+        </div>
+      </div>
+    `;
+    
+    projectsContainer.appendChild(projectCard);
+  });
 }
 
-// Export functions for external use (if needed)
-window.portfolioProjects = {
-  add: addProject,
-  remove: removeProject,
-  update: updateProject,
-  getAll: () => [...projects]
-};
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+  renderProjects();
+});
