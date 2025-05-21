@@ -1,200 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rhea George | Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-white">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Rhea George</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
   <!-- Hero Section -->
-  <section class="hero d-flex align-items-center" id="home">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6" data-aos="fade-right">
-          <h1 class="display-4 fw-bold mb-4">Hi, I'm Rhea George</h1>
-          <p class="lead mb-4">MIS Grad @ TAMU | Data & Product Enthusiast | SQL • Power BI • Python</p>
-          <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
-        </div>
-        <div class="col-md-6 text-center" data-aos="fade-left">
-          <img src="assets/images/profile.png" alt="Rhea George" class="hero-image img-fluid rounded-circle">
-        </div>
-      </div>
+  <section class="hero text-center text-white d-flex flex-column justify-content-center align-items-center" id="home">
+    <div class="overlay"></div>
+    <div class="container position-relative" data-aos="fade-up">
+      <h1 class="display-4 fw-bold">Hi, I'm Rhea George</h1>
+      <p class="lead">MIS Grad @ TAMU | Data & Product Enthusiast | SQL • Power BI • Python</p>
+      <a href="#projects" class="btn btn-outline-light mt-3">View My Work</a>
     </div>
-  </section>
+  <img src="profile.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
 
   <!-- About Section -->
-  <section class="section-padding bg-light" id="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-5 mb-4 mb-md-0" data-aos="fade-right">
-          <img src="assets/images/about.jpg" alt="About Me" class="img-fluid rounded">
-        </div>
-        <div class="col-md-7" data-aos="fade-left">
-          <h2 class="section-title">About Me</h2>
-          <p class="mb-4">I'm pursuing my Master's in Management Information Systems at Texas A&M. With experience at Accenture and TAMU, I've led initiatives in analytics, cloud systems, and BI tools to drive data-informed decision making.</p>
-          <div class="d-flex gap-3">
-            <a href="assets/Rhea_George_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
-            <a href="#contact" class="btn btn-outline-primary">Contact Me</a>
-          </div>
-        </div>
+  <section class="py-5 bg-info text-white" id="about">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">About Me</h2>
+      <p class="text-center">I'm pursuing my Master's in Management Information Systems at Texas A&M. With experience at Accenture and TAMU, I've led initiatives in analytics, cloud systems, and BI tools to drive data-informed decision making.</p>
+      <div class="text-center mt-3">
+        <a href="Rhea_George_Resume.pdf" class="btn btn-primary" download>📄 Download Resume</a>
       </div>
     </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="section-padding" id="projects">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">My Projects</h2>
-      <div class="row" id="projects-container">
-        <!-- Projects will be dynamically inserted here from projects.js -->
-      </div>
-    </div>
-  </section>
+  <img src="ghibli_avatar.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
 
   <!-- Education Section -->
-  <section class="section-padding bg-light" id="education">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Education</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="timeline">
-            <div class="timeline-item" data-aos="fade-up">
-              <div class="timeline-content">
-                <h3>Texas A&M University</h3>
-                <p class="timeline-date">2024 - 2026</p>
-                <p>Master of Science in Management Information Systems</p>
-              </div>
+  <section class="py-5" id="education">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Education</h2>
+      <ul class="list-unstyled text-center">
+        <li><strong>Texas A&M University</strong> – MS in Management Information Systems (2024–2026)</li>
+        <li><strong>Karunya Institute of Technology</strong> – BTech in Electronics & Communication Engineering (2017–2021)</li>
+      </ul>
+    </div>
+  <img src="ghibli_avatar.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
+
+  <!-- Projects Section -->
+  <section class="py-5" id="projects">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Projects</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📊 Churn Prediction</h5>
+              <p class="card-text">Used Decision Trees & Logistic Regression to predict churn with 85% accuracy.</p>
+              <a href="https://github.com/rheageorge179/Customer-Churn-Prediction-using-ML" class="btn btn-sm btn-primary" target="_blank">GitHub ↗</a>
             </div>
-            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-              <div class="timeline-content">
-                <h3>Karunya Institute of Technology</h3>
-                <p class="timeline-date">2017 - 2021</p>
-                <p>Bachelor of Technology in Electronics & Communication Engineering</p>
-              </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">☁️ Healthcare Infrastructure</h5>
+              <p class="card-text">Deployed a cloud-hosted DB (AWS EC2) that improved data retrieval speed by 40%.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">📈 Dashboard Automation</h5>
+              <p class="card-text">Built Tableau and Power BI dashboards to enhance reporting at TAMU & Accenture.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  <img src="ghibli_avatar.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
 
   <!-- Certifications Section -->
-  <section class="section-padding" id="certifications">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Certifications</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <div class="certification-item" data-aos="fade-up">
-            <div class="certification-logo">
-              <i class="fab fa-microsoft"></i>
-            </div>
-            <div class="certification-content">
-              <h3><a href="https://learn.microsoft.com/en-us/users/georgerhea-2535/credentials/certification/azure-data-engineer?source=docs&tab=credentials-tab" target="_blank">Microsoft Certified: Azure Data Engineer Associate</a></h3>
-              <p>Earned June 2023</p>
-            </div>
-          </div>
-          <div class="certification-item" data-aos="fade-up" data-aos-delay="100">
-            <div class="certification-logo">
-              <i class="fas fa-certificate"></i>
-            </div>
-            <div class="certification-content">
-              <h3><a href="https://www.scrum.org/certificates/1138947" target="_blank">Professional Scrum Master I (PSM I)</a></h3>
-              <p>Earned September 2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="py-5 bg-light" id="certifications">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Certifications</h2>
+      <ul class="list-unstyled text-center">
+        <li><a href="https://learn.microsoft.com/en-us/users/georgerhea-2535/credentials/certification/azure-data-engineer?source=docs&tab=credentials-tab" target="_blank">Microsoft Certified: Azure Data Engineer Associate</a> – Earned June 2023</li>
+        <li><a href="https://www.scrum.org/certificates/1138947" target="_blank">Professional Scrum Master I (PSM I)</a> – Earned September 2024</li>
+      </ul>
     </div>
-  </section>
+  <img src="ghibli_avatar.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
 
   <!-- Contact Section -->
-  <section class="section-padding bg-light" id="contact">
-    <div class="container">
-      <h2 class="section-title text-center mb-5">Get In Touch</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
-          <p class="mb-4">Feel free to reach out for collaboration opportunities or just to say hello!</p>
-          <div class="contact-links">
-            <a href="mailto:rheageorge179@gmail.com" class="contact-link" data-aos="zoom-in">
-              <i class="fas fa-envelope"></i>
-              <span>rheageorge179@gmail.com</span>
-            </a>
-            <a href="https://www.linkedin.com/in/rheageorge99/" target="_blank" class="contact-link" data-aos="zoom-in" data-aos-delay="100">
-              <i class="fab fa-linkedin"></i>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://github.com/rheageorge179" target="_blank" class="contact-link" data-aos="zoom-in" data-aos-delay="200">
-              <i class="fab fa-github"></i>
-              <span>GitHub</span>
-            </a>
-          </div>
-        </div>
+  <section class="py-5" id="contact">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4">Contact</h2>
+      <div class="d-flex justify-content-center gap-4">
+        <a href="mailto:rheageorge179@gmail.com" class="text-dark"><i class="fas fa-envelope fa-lg"></i></a>
+        <a href="https://www.linkedin.com/in/rheageorge99/" target="_blank" class="text-dark"><i class="fab fa-linkedin fa-lg"></i></a>
+        <a href="https://github.com/rheageorge179" target="_blank" class="text-dark"><i class="fab fa-github fa-lg"></i></a>
+        <a href="Rhea_George_Resume.pdf" download class="text-dark"><i class="fas fa-file-download fa-lg"></i></a>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-4 text-center">
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Rhea George. All Rights Reserved.</p>
-    </div>
-  </footer>
+  <img src="ghibli_avatar.png" alt="Cartoon Avatar" class="avatar-figure"/>
+</section>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="projects.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-
-    // Active link switching
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
+  <script>AOS.init();</script>
 </body>
 </html>
